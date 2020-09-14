@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/mRg1">
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="man"
+            android:checked="true"
+            android:textSize="20sp"
+            android:textColor="@drawable/bg_btn4"
+            android:id="@+id/rn_1"/>
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="women"
+            android:textSize="20sp"
+            android:textColor="@drawable/bg_btn4"
+            android:id="@+id/rn_2"/>
+    </RadioGroup>
+
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="200dp"
+        android:orientation="horizontal"
+        android:layout_marginLeft="10dp">
+        <RadioButton
+            android:layout_width="60dp"
+            android:layout_height="30dp"
+            android:text="男"
+            android:button="@null"
+            android:textSize="18sp"
+            android:gravity="center"
+            android:background="@drawable/change_origin"
+            android:textColor="#000000"/>
+        <RadioButton
+            android:layout_width="60dp"
+            android:layout_height="30dp"
+            android:text="女"
+            android:button="@null"
+            android:layout_marginLeft="10dp"
+            android:textSize="18sp"
+            android:gravity="center"
+            android:background="@drawable/change_origin"
+            android:textColor="#000000"/>
+
+    </RadioGroup>
+
+</RelativeLayout>

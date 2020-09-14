@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RoomDatabaseActivity"
+    android:orientation="vertical">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center">
+
+        <LinearLayout
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="姓名:"
+            android:gravity="center"
+            android:id="@+id/name_tv"
+            android:layout_marginLeft="3dp"/>
+
+        <EditText
+            android:layout_width="80dp"
+            android:layout_height="match_parent"
+            android:id="@+id/name" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="年龄:"/>
+        <EditText
+            android:layout_width="60dp"
+            android:layout_height="match_parent"
+            android:id="@+id/age"
+            android:inputType="number"/>
+
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="描述:"/>
+
+        <EditText
+            android:layout_width="60dp"
+            android:layout_height="match_parent"
+            android:id="@+id/description" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="add User"
+                android:id="@+id/add_user"
+                android:textAllCaps="false"/>
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="用户名：" />
+        <EditText
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:id="@+id/username"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="密码:"
+            />
+        <EditText
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:inputType="numberPassword"
+            android:id="@+id/password"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="城市:"
+            />
+        <EditText
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:inputType="text"
+            android:id="@+id/city"
+            />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="add Consumer"
+            android:id="@+id/add_consumer"
+            android:textAllCaps="false"/>
+
+
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/select_user"
+        android:text="select User"
+        android:textAllCaps="false"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/select_address"
+        android:text="select Address"
+        android:textAllCaps="false"/>
+
+
+
+    </LinearLayout>
+
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center">
+
+        <LinearLayout
+            android:layout_height="50dp"
+            android:layout_width="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="ID:"
+                android:gravity="center"
+                android:layout_marginLeft="3dp"/>
+
+            <EditText
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:id="@+id/id_update"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="姓名:"
+                android:gravity="center"
+                android:maxLines="1"
+                android:layout_marginLeft="3dp"/>
+
+            <EditText
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:id="@+id/name_update"/>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="年龄:"/>
+            <EditText
+                android:layout_width="30dp"
+                android:layout_height="match_parent"
+                android:id="@+id/age_update"
+                android:inputType="number"/>
+
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="城市:"/>
+
+            <EditText
+                android:layout_width="40dp"
+                android:layout_height="match_parent"
+                android:id="@+id/city_update" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="update User"
+                android:id="@+id/update_user"
+                android:textAllCaps="false"/>
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+
+
+
+
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:text="ID："
+        android:gravity="center"/>
+    <EditText
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:maxLines="1"
+        android:id="@+id/Edit_text"
+        android:inputType="number"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/delete"
+            android:text="delete user"
+            android:textAllCaps="false"/>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:text="城市："/>
+            <EditText
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:maxLines="1"
+                android:inputType="text"
+                android:id="@+id/add_address_edit"/>
+
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/add_address"
+                android:text="add_address"
+                android:textAllCaps="false"/>
+
+        </LinearLayout>
+
+
+
+
+
+    </LinearLayout>
+
+
+
+
+
+
+
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:text="城市："/>
+        <EditText
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/select_consumer_edit"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/select_consumer_by_city"
+            android:text="select consumer by city"
+            android:textAllCaps="false"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/select_all_consumer"
+            android:textAllCaps="false"
+            android:text="selectall consumer"/>
+
+    </LinearLayout>
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/show_data"/>
+
+</LinearLayout>

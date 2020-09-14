@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.myapplication">
+
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+        <activity android:name=".event.EventBusActivity2"></activity>
+        <activity android:name=".event.EventBusActivity" />
+        <activity android:name=".StartH5Activity" />
+        <activity android:name=".RoomDatabaseActivity" />
+        <activity android:name=".ForeGroundActivity" />
+
+        <service
+            android:name=".ForeGroundService"
+            android:enabled="true"
+            android:exported="true" />
+        <service
+            android:name=".MessageServices"
+            android:enabled="true"
+            android:process=":remote" />
+
+        <activity android:name=".MessageActivity" />
+        <activity android:name=".ServiceActivity" />
+
+        <service
+            android:name=".MyService"
+            android:enabled="true"
+            android:exported="true" />
+        <service
+            android:name=".MessageService"
+            android:enabled="true"
+            android:exported="true" />
+
+        <activity android:name=".LocationActivity" />
+        <activity android:name=".SqlLiteActivity" />
+        <activity android:name=".InternalActivity" />
+        <activity android:name=".SaveActivity" />
+        <activity android:name=".ShowActivity" />
+        <activity android:name=".HandlerToActivity" />
+        <activity android:name=".HandlerActivity" />
+        <activity android:name=".CmViewActivity" />
+        <activity android:name=".fragment.ContainerActivity" />
+        <activity android:name=".PopupWindowActivity" />
+        <activity android:name=".CustomDialogActivity" />
+        <activity android:name=".ProgressActivity" />
+        <activity android:name=".Dialog.DialogActivity" />
+        <activity
+            android:name=".jump.AActivity"
+            android:label="A" />
+        <activity
+            android:name=".jump.BActivity"
+            android:label="B">
+            <intent-filter>
+                <action android:name="com.android.test.BActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".UIActivity" />
+        <activity android:name=".ToastActivity" />
+        <activity android:name=".webview.WebViewActivity" />
+        <activity android:name=".recyclerview.CataractRecyclerActivity" />
+        <activity android:name=".recyclerview.GridRecyclerActivity" />
+        <activity android:name=".recyclerview.HorRecyclerViewActivity" />
+        <activity android:name=".recyclerview.LinearRecyclerViewActivity" />
+        <activity android:name=".recyclerview.RecyclerViewActivity" />
+        <activity android:name=".ImageViewActivity" />
+        <activity android:name=".CheckBoxActivity" />
+        <activity android:name=".RedioActivity" />
+        <activity android:name=".EditActivity" />
+        <activity android:name=".ButtonActivity" />
+        <activity android:name=".listview.ListViewActivity" />
+        <activity android:name=".gridview.GridViewActivity" />
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
