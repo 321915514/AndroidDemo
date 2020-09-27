@@ -25,7 +25,7 @@ public class X5WebView extends WebView {
 
 
 
-    public X5WebView(Context context, AttributeSet attributeSet){
+    public X5WebView(Context context, AttributeSet attributeSet, int defStyleAttr){
         super(context,attributeSet);
         this.setWebViewClient(client);
         initWebViewConfig(context);

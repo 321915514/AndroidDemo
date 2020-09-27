@@ -3,7 +3,6 @@
     package="com.example.myapplication">
 
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
@@ -11,6 +10,11 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.USE_FULL_SCREEN_INTENT " />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
     <application
         android:allowBackup="true"
@@ -19,7 +23,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-        <activity android:name=".event.EventBusActivity2"></activity>
+        <activity android:name=".recyclerview.RecycleActivity1"></activity>
+        <activity android:name=".coordinatorLayoutActivity" />
+        <activity android:name=".recyclerview.RecyclerViewActivity1" />
+        <activity android:name=".SlideActivity" />
+        <activity android:name=".mvp.activity.LoginActivity" />
+        <activity android:name=".event.EventBusActivity2" />
         <activity android:name=".event.EventBusActivity" />
         <activity android:name=".StartH5Activity" />
         <activity android:name=".RoomDatabaseActivity" />

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".coordinatorLayoutActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/appbar"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:layout_width="match_parent"
+            android:layout_height="170dp"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed"
+            app:title="@string/app_name"
+            android:id="@+id/cl_appbar">
+<!--        <androidx.recyclerview.widget.RecyclerView-->
+<!--            android:id="@+id/rv_show"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"/>-->
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:id="@+id/iv_show"/>
+
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        app:layout_collapseMode="pin"
+        android:id="@+id/toolbar"
+        app:title="@string/app_name">
+<!--        app:layout_scrollFlags="scroll|exitUntilCollapsed"-->
+<!--        <ImageView-->
+<!--            android:id="@+id/iv_bg"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="50dp"-->
+<!--            android:background="@color/origin"-->
+<!--            android:scaleType="centerCrop"/>-->
+
+    </androidx.appcompat.widget.Toolbar>
+<!--    <TextView-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="50dp"-->
+<!--        android:id="@+id/tv_title"-->
+<!--        android:text="标题"-->
+<!--        android:gravity="center"/>-->
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+    </com.google.android.material.appbar.AppBarLayout>
+    <com.example.myapplication.util.view.NestedScrollWebView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        android:focusable="true"
+        android:focusableInTouchMode="true">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <com.flyco.tablayout.SlidingTabLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                app:tl_tab_space_equal="true"
+                app:tl_textBold="BOTH"
+                app:tl_indicator_color="@color/origin"
+                app:tl_indicator_width="25dp"
+                app:tl_textSelectColor="@color/origin"
+                app:tl_textUnselectColor="@color/colorGray"
+                android:id="@+id/st_slide_tab"/>
+            <androidx.viewpager.widget.ViewPager
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/vp_content"/>
+
+
+
+        </LinearLayout>
+
+
+    </com.example.myapplication.util.view.NestedScrollWebView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

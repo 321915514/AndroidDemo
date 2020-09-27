@@ -203,7 +203,7 @@ public class RoomDatabaseActivity extends AppCompatActivity {
                     User user = findUserByID(Integer.valueOf(mUpdateID.getText().toString()));
                     if (user != null){
                         if(mUpdatename.getText().toString().equals("")||mUpdateAge.getText().toString().equals("")||mUpdateCity.getText().toString().equals("")){
-                            UtToast.toast(getApplicationContext(),"姓名或年龄或城市不能为空",Toast.LENGTH_SHORT);
+                            UtToast.show(getApplicationContext(),"姓名或年龄或城市不能为空");
                             return;
                         }
                         user.setU_id(user.getU_id());
@@ -212,7 +212,7 @@ public class RoomDatabaseActivity extends AppCompatActivity {
                         user.setAddress(user.getAddress().getCountry(),user.getAddress().getProvince(),mUpdateCity.getText().toString());
                         updateUser(user);
                     }else {
-                        UtToast.toast(getApplicationContext(),"无此用户",Toast.LENGTH_SHORT);
+                        UtToast.show(getApplicationContext(),"无此用户");
                     }
                     mUpdateID.getText().clear();
                     mUpdatename.getText().clear();
@@ -224,7 +224,7 @@ public class RoomDatabaseActivity extends AppCompatActivity {
                     User user1 = findUserByID(Integer.valueOf(mInput.getText().toString()));
                     if(user1 != null){
                         Log.e("TAG",""+user1.getU_id());
-                        UtToast.toast(getApplicationContext(),"index is "+deleteUser(user1),Toast.LENGTH_SHORT);
+                        UtToast.show(getApplicationContext(),"index is "+deleteUser(user1));
                         mInput.getText().clear();
                         break;
                     }else {
@@ -243,7 +243,7 @@ public class RoomDatabaseActivity extends AppCompatActivity {
 
                         Long index = insertConsumer(new Consumer(mUsername.getText().toString(),mPassword.getText().toString(),address_id));
 
-                        UtToast.toast(getApplicationContext(),"index is"+index,Toast.LENGTH_SHORT);
+                        UtToast.show(getApplicationContext(),"index is"+index);
                     }
                     mUsername.getText().clear();
                     mPassword.getText().clear();
@@ -266,7 +266,7 @@ public class RoomDatabaseActivity extends AppCompatActivity {
                     address.setCity(addressInput);
                     result = mAppDatabase.AddressDao().insertAll(address);
                     if(result>0){
-                        UtToast.toast(getApplicationContext(),"index is"+result,Toast.LENGTH_SHORT);
+                        UtToast.show(getApplicationContext(),"index is"+result);
                         mInputAddress.getText().clear();
                     }
                     break;

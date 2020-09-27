@@ -1,64 +1,85 @@
 package com.example.myapplication;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.example.myapplication.Dialog.DialogActivity;
 import com.example.myapplication.fragment.ContainerActivity;
+import com.example.myapplication.gridview.GridViewActivity;
 import com.example.myapplication.jump.AActivity;
 import com.example.myapplication.listview.ListViewActivity;
-import com.example.myapplication.gridview.GridViewActivity;
+import com.example.myapplication.recyclerview.RecycleActivity1;
 import com.example.myapplication.recyclerview.RecyclerViewActivity;
 import com.example.myapplication.webview.WebViewActivity;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
 public class UIActivity extends AppCompatActivity {
 
-    private Button button;
-    private Button EditButton;
-    private Button RedioButton;
-    private Button checkBoxButton;
-    private Button mBtnImagView;
-    private Button mBtnListView;
-    private Button mbtnGridView;
-    private Button mBtnRecyclerView;
-    private Button mBtnWebView;
-    private Button mBtnToast;
-    private Button mBtnDialog,mBtnCustomDialog;
-    private Button mBtnProgress,mBtnPopupWindow,mBtnJump,mBtnFragment,mBtnCmView,mBtnHandler,mShow,mSqlLite,mLocation,mService,mStartH5;
+    @BindView(R.id.Button_1)
+    Button button;
+    @BindView(R.id.Button_2)
+    Button EditButton;
+    @BindView(R.id.Redio_btn)
+    Button RedioButton;
+    @BindView(R.id.checkbox)
+    Button checkBoxButton;
+    @BindView(R.id.ImageView)
+    Button mBtnImagView;
+    @BindView(R.id.ListView)
+    Button mBtnListView;
+    @BindView(R.id.GridView)
+    Button mbtnGridView;
+    @BindView(R.id.RecyclerView)
+    Button mBtnRecyclerView;
+    @BindView(R.id.WebView)
+    Button mBtnWebView;
+    @BindView(R.id.Toast)
+    Button mBtnToast;
+    @BindView(R.id.Dialog)
+    Button mBtnDialog;
+    @BindView(R.id.ProgressBar)
+    Button mBtnProgress;
+    @BindView(R.id.CustomDialog)
+    Button mBtnCustomDialog;
+    @BindView(R.id.PopupWindow)
+    Button mBtnPopupWindow;
+    @BindView(R.id.Jump)
+    Button mBtnJump;
+    @BindView(R.id.fragment)
+    Button mBtnFragment;
+    @BindView(R.id.CmView)
+    Button mBtnCmView;
+    @BindView(R.id.HandlerActivity)
+    Button mBtnHandler;
+    @BindView(R.id.showActivity)
+    Button mShow;
+    @BindView(R.id.SqlLite)
+    Button mSqlLite;
+    @BindView(R.id.Location)
+    Button mLocation;
+    @BindView(R.id.ServiceActivity)
+    Button mService;
+    @BindView(R.id.startH5)
+    Button mStartH5;
+    @BindView(R.id.coordinatorLayout)
+    Button coordinatorLayout;
+    @BindView(R.id.bt_intent)
+    Button btIntent;
+    @BindView(R.id.bt_recyclerview)
+    Button btRecyclerview;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ui);
-        button = findViewById(R.id.Button_1);
-        EditButton = findViewById(R.id.Button_2);
-        RedioButton = findViewById(R.id.Redio_btn);
-        checkBoxButton = findViewById(R.id.checkbox);
-        mBtnImagView = findViewById(R.id.ImageView);
-        mBtnListView = findViewById(R.id.ListView);
-        mbtnGridView = findViewById(R.id.GridView);
-        mBtnRecyclerView = findViewById(R.id.RecyclerView);
-        mBtnWebView = findViewById(R.id.WebView);
-        mBtnToast = findViewById(R.id.Toast);
-        mBtnDialog = findViewById(R.id.Dialog);
-        mBtnProgress = findViewById(R.id.ProgressBar);
-        mBtnCustomDialog = findViewById(R.id.CustomDialog);
-        mBtnPopupWindow = findViewById(R.id.PopupWindow);
-        mBtnJump = findViewById(R.id.Jump);
-        mBtnFragment = findViewById(R.id.fragment);
-        mBtnCmView = findViewById(R.id.CmView);
-        mBtnHandler = findViewById(R.id.HandlerActivity);
-        mShow = findViewById(R.id.showActivity);
-        mSqlLite = findViewById(R.id.SqlLite);
-        mLocation = findViewById(R.id.Location);
-        mService = findViewById(R.id.ServiceActivity);
-        mStartH5 = findViewById(R.id.startH5);
+        ButterKnife.bind(this);
         setListener();
-
 
 
 //        button.setOnClickListener(new View.OnClickListener() {
@@ -77,7 +98,8 @@ public class UIActivity extends AppCompatActivity {
 //            }
 //        });
     }
-    public void setListener(){
+
+    public void setListener() {
         onClick onClick = new onClick();
         button.setOnClickListener(onClick);
         EditButton.setOnClickListener(onClick);
@@ -102,17 +124,30 @@ public class UIActivity extends AppCompatActivity {
         mLocation.setOnClickListener(onClick);
         mService.setOnClickListener(onClick);
         mStartH5.setOnClickListener(onClick);
+        coordinatorLayout.setOnClickListener(onClick);
+        btRecyclerview.setOnClickListener(onClick);
+        btIntent.setOnClickListener((View view) -> {
+            Intent intent = new Intent();
+            Bundle bundle = new Bundle();
+            bundle.putInt("age", 23);
+            bundle.putString("Hello", "world");
+            intent.putExtras(bundle);
+            setResult(RESULT_OK, intent);
+            finish();
+        });
     }
-    private class onClick implements View.OnClickListener{
-        Intent intent=null;
+
+    private class onClick implements View.OnClickListener {
+        Intent intent = null;
+
         @Override
         public void onClick(View view) {
-            switch (view.getId()){
+            switch (view.getId()) {
                 case R.id.Button_1:
-                    intent = new Intent(UIActivity.this,ButtonActivity.class);
+                    intent = new Intent(UIActivity.this, ButtonActivity.class);
                     break;
                 case R.id.Button_2:
-                    intent = new Intent(UIActivity.this,EditActivity.class);
+                    intent = new Intent(UIActivity.this, EditActivity.class);
                     break;
                 case R.id.Redio_btn:
                     intent = new Intent(UIActivity.this, RedioActivity.class);
@@ -121,7 +156,7 @@ public class UIActivity extends AppCompatActivity {
                     intent = new Intent(UIActivity.this, CheckBoxActivity.class);
                     break;
                 case R.id.ImageView:
-                    intent = new Intent(UIActivity.this,ImageViewActivity.class);
+                    intent = new Intent(UIActivity.this, ImageViewActivity.class);
                     break;
                 case R.id.ListView:
                     intent = new Intent(UIActivity.this, ListViewActivity.class);
@@ -163,21 +198,29 @@ public class UIActivity extends AppCompatActivity {
                     intent = new Intent(UIActivity.this, HandlerActivity.class);
                     break;
                 case R.id.showActivity:
-                    intent = new Intent(getApplicationContext(),SaveActivity.class);
+                    intent = new Intent(getApplicationContext(), SaveActivity.class);
                     break;
                 case R.id.SqlLite:
-                    intent = new Intent(getApplicationContext(),SqlLiteActivity.class);
+                    intent = new Intent(getApplicationContext(), SqlLiteActivity.class);
                     break;
                 case R.id.Location:
-                    intent = new Intent(getApplicationContext(),LocationActivity.class);
+                    intent = new Intent(getApplicationContext(), LocationActivity.class);
                     break;
                 case R.id.ServiceActivity:
-                    intent = new Intent(getApplicationContext(),ServiceActivity.class);
+                    intent = new Intent(getApplicationContext(), ServiceActivity.class);
                     break;
                 case R.id.startH5:
-                    intent = new Intent(getApplicationContext(),StartH5Activity.class);
+                    intent = new Intent(getApplicationContext(), StartH5Activity.class);
                     break;
-
+                case R.id.coordinatorLayout:
+                    intent = new Intent(getApplicationContext(), coordinatorLayoutActivity.class);
+                    break;
+                case R.id.bt_recyclerview:
+                    intent = new Intent(getApplicationContext(), RecycleActivity1.class);
+                    intent.putExtra("title","列表");
+                    intent.putExtra("share",true);
+                    intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                    break;
             }
             startActivity(intent);
         }

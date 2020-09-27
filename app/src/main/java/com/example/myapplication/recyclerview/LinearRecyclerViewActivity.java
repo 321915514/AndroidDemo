@@ -1,11 +1,13 @@
 package com.example.myapplication.recyclerview;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.graphics.Rect;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -23,6 +25,15 @@ public class LinearRecyclerViewActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_linear_recycler_view);
         recyclerView = findViewById(R.id.re_main);
+        RecyclerView.LayoutManager layoutManager = new RecyclerView.LayoutManager() {
+            @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN_MR1)
+            @Override
+            public RecyclerView.LayoutParams generateDefaultLayoutParams() {
+                RecyclerView.LayoutParams layoutParams = (RecyclerView.LayoutParams) recyclerView.getLayoutParams();
+                layoutParams.setMarginStart(30);
+                return layoutParams;
+            }
+        };
         recyclerView.setLayoutManager(new LinearLayoutManager(LinearRecyclerViewActivity.this));
         recyclerView.setAdapter(new LinearAdapter(LinearRecyclerViewActivity.this));
         recyclerView.addItemDecoration(new MyDecoration());
@@ -35,7 +46,7 @@ public class LinearRecyclerViewActivity extends AppCompatActivity {
         public void onScrollStateChanged(@NonNull RecyclerView recyclerView, int newState) {
             super.onScrollStateChanged(recyclerView, newState);
             Log.e("TAG",""+recyclerView);
-            UtToast.toast(getApplicationContext(),""+newState, Toast.LENGTH_SHORT);
+            UtToast.show(getApplicationContext(),""+newState);
         }
     };
 

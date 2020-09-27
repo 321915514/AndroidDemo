@@ -4,7 +4,7 @@ import android.content.Context;
 import android.widget.Toast;
 
 public  class UtToast {
-    public static void toast(Context context,String message,int timer){
-        Toast.makeText(context,message,timer).show();
+    public static void show(Context context,String message){
+        Toast.makeText(context,message,Toast.LENGTH_SHORT).show();
     }
 }

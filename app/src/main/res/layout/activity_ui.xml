@@ -204,6 +204,24 @@
             android:id="@+id/startH5"
             android:text="StartH5Activity"
             android:textAllCaps="false"/>
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/coordinatorLayout"
+            android:text="coordinatorLayout"
+            android:textAllCaps="false"/>
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/bt_intent"
+            android:text="bt_intent"
+            android:textAllCaps="false"/>
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/bt_recyclerview"
+            android:text="bt_recyclerview"
+            android:textAllCaps="false"/>
     </LinearLayout>
 
 

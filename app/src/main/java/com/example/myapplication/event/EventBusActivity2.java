@@ -28,6 +28,7 @@ public class EventBusActivity2 extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 publishContent();
+                publishContent2();
             }
         });
 
@@ -35,6 +36,12 @@ public class EventBusActivity2 extends AppCompatActivity {
     private  void  publishContent(){
         String msg = mEvent.getText().toString();
         EventBus.getDefault().post(MessageWrap.getInstance(msg));
-        UtToast.toast(getApplicationContext(),"publish msg"+msg, Toast.LENGTH_LONG);
+        UtToast.show(getApplicationContext(),"publish msg"+msg);
     }
+    void publishContent2(){
+        String msg = mEvent.getText().toString();
+        EventBus.getDefault().postSticky(MessageWrap.getInstance(msg));
+        UtToast.show(getApplicationContext(),"publish msg"+msg);
+    }
+
 }
